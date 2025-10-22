@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Code</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    body {
+  background-color: #ffe6f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  background-color: #ffd8eb;
+  border-radius: 20px;
+  padding: 30px 50px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px dashed white;
+  flex-shrink: 0;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.passcode-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.passcode-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #a52a5e;
+}
+
+#passInput {
+  width: 150px;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 5px;
+  padding: 6px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 2px solid #f7b6cc;
+  background-color: #fff;
+  color: #a52a5e;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.keypad button {
+  width: 60px;
+  height: 60px;
+  background-color: #ffbad2;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.keypad button:hover {
+  background-color: #ff9fc2;
+  transform: scale(1.05);
+}
+
+.keypad .clear {
+  grid-column: span 1;
+  background-color: #ff94b8;
+}
+
+.keypad .enter {
+  grid-column: span 2;
+  background-color: #d86c97;
+}
+
+.keypad .zero {
+  grid-column: span 3;
+}
+
+</style>
+<body>
+  <div class="container">
+    <!-- Foto -->
+    <div class="photo">
+      <img src="assets/couple.jpg" alt="Photo">
+    </div>
+
+    <!-- Panel kode -->
+    <div class="passcode-box">
+      <h3>Enter Passcode</h3>
+      <input type="password" id="passInput" maxlength="4" readonly>
+      <div class="keypad">
+        <button class="num">1</button>
+        <button class="num">2</button>
+        <button class="num">3</button>
+        <button class="num">4</button>
+        <button class="num">5</button>
+        <button class="num">6</button>
+        <button class="num">7</button>
+        <button class="num">8</button>
+        <button class="num">9</button>
+        <button class="num zero">0</button>
+        <button class="clear">Clear</button>
+        <button class="enter">Enter</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+    const passInput = document.getElementById('passInput');
+const nums = document.querySelectorAll('.num');
+const correctCode = "2025"; // ubah sesuai keinginan
+const clearBtn = document.querySelector('.clear');
+const enterBtn = document.querySelector('.enter');
+
+nums.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (passInput.value.length < 4) {
+      passInput.value += btn.textContent;
+    }
+  });
+});
+
+clearBtn.addEventListener('click', () => {
+  passInput.value = "";
+});
+
+enterBtn.addEventListener('click', () => {
+  if (passInput.value === correctCode) {
+    alert("Access Granted 💖");
+    // contoh redirect:
+    // window.location.href = "home.html";
+  } else {
+    alert("Wrong Passcode ❌");
+    passInput.value = "";
+  }
+});
+
+</script>

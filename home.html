@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --maroon: #380116;
+      --bg: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      font-family: 'Allura', cursive;
+      color: var(--maroon);
+      overflow-x: hidden;
+    }
+
+    /* ===== SECTION 1 ===== */
+    section.top {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .photos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
+    .photo {
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      width: 180px;
+      height: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .photo:nth-child(1) {
+      transform: rotate(-8deg);
+    }
+
+    .photo:nth-child(2) {
+      transform: rotate(6deg);
+      margin-top: 15px;
+    }
+
+    .text {
+      font-size: 64px;
+      text-align: center;
+      line-height: 1.2;
+      margin-top: -10px;
+    }
+
+    .quote {
+      font-size: 28px;
+      opacity: 0.7;
+      margin-top: -25px;
+      padding: 0 100px;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .hint {
+      font-size: 25px;
+      opacity: 0.6;
+      margin-top: 10px;
+      animation: blink 2s infinite ease-in-out;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    /* ===== SECTION 2 ===== */
+.prolog {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 50px 20px;
+}
+
+.prolog .title {
+  font-family: 'Allura', cursive;
+  font-size: 52px;
+  color: #3b0d18;
+  margin-bottom: 30px;
+}
+
+.prolog .book {
+  margin-top: -30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.prolog .book img {
+  width: 650px;
+  max-width: 85%;
+  z-index: 2;
+  position: relative;
+  border-radius: 8px;
+  animation: fadeUp 1.5s ease-out forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== FLOWER DECOR ===== */
+.flowers {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.flower {
+  position: absolute;
+  width: 85px;
+  opacity: 0;
+  transform: scale(0.2);
+  transition: opacity 2.5s ease, transform 2.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform, opacity;
+}
+
+/* posisi akhir */
+.f1  { top: 12%; left: 22%; --end-scale: 1.1; transition-delay: 0s; }
+.f2  { top: 25%; right: 5%; --end-scale: 0.95; transition-delay: 0.3s; }
+.f3  { bottom: 15%; left: 8%; --end-scale: 1.05; transition-delay: 0.6s; }
+.f4  { bottom: 5%; right: 20%; --end-scale: 1.15; transition-delay: 0.9s; }
+.f5  { top: 45%; left: 75%; --end-scale: 1.08; transition-delay: 1.2s; }
+.f6  { top: 50%; left: 10%; --end-scale: 1.12; transition-delay: 1.5s; }
+.f7  { top: 10%; left: 78%; --end-scale: 0.9;  transition-delay: 1.8s; }
+.f8  { top: 20%; left: 8%;  --end-scale: 1.2;  transition-delay: 2.1s; }
+.f9  { top: 70%; left: 85%; --end-scale: 1.05; transition-delay: 2.4s; }
+.f10 { top: 85%; left: 20%; --end-scale: 1.15; transition-delay: 2.7s; }
+.f11 { top: 15%; left: 64%; --end-scale: 1.05; transition-delay: 3.0s; }
+.f12 { top: 50%; left: 25%; --end-scale: 0.9;  transition-delay: 3.3s; }
+.f13 { top: 82%; left: 50%; --end-scale: 1.2;  transition-delay: 3.6s; }
+
+/* muncul halus */
+.prolog.show-flowers .flower {
+  opacity: 1;
+  transform: scale(var(--end-scale));
+}
+
+/* animasi naik-turun lembut */
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(var(--end-scale)); }
+  50% { transform: translateY(-12px) scale(var(--end-scale)); }
+}
+
+.flower.floating {
+  animation: float 5s ease-in-out infinite;
+}
+
+.wish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #380116;
+  font-family: "Allura", cursive;
+}
+
+.wish .title {
+  font-size: 52px;
+  margin-bottom: 30px;
+  color: #380116;
+}
+
+.wish-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+/* jar + love icons */
+.jar-container {
+  position: relative;
+  width: 300px;
+}
+
+.jar-img {
+  width: 120%;
+}
+
+.loves {
+  position: absolute;
+  top: 30%;
+  left: 18%;
+  width: 65%;
+  height: 55%;
+  pointer-events: none; /* biar jar di luar area tetap bisa diklik */
+}
+
+.love {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: translate(var(--x), var(--y)) rotate(var(--r));
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.3s ease;
+}
+
+/* efek hover */
+.love:hover {
+  transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(1.3);
+  z-index: 10;
+}
+
+/* posisi rapi & seimbang di dalam jar */
+.love:nth-child(1)  { top: 10%;  left: 10%;  }
+.love:nth-child(2)  { top: 5%;  left: 35%; }
+.love:nth-child(3)  { top: 12%; left: 65%;  transform: rotate(-8deg); }
+.love:nth-child(4)  { top: 3%; left: 90%;  transform: rotate(10deg); }
+.love:nth-child(5)  { top: 35%; left: 15%;  transform: rotate(20deg); }
+.love:nth-child(6)  { top: 33%; left: 45%;  transform: rotate(7deg); }
+.love:nth-child(7)  { top: 38%; left: 70%;  transform: rotate(-6deg); }
+.love:nth-child(8)  { top: 60%; left: 6%;  transform: rotate(10deg); }
+.love:nth-child(9)  { top: 60%; left: 40%;  transform: rotate(-9deg); }
+.love:nth-child(10) { top: 60%; left: 70%;  transform: rotate(8deg); }
+
+.love {
+  animation: floatLove 4s ease-in-out infinite;
+}
+
+/* info + message */
+.info {
+  max-width: 300px;
+}
+
+.legend {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.legend .dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.dot.dark { background-color: #4a0d1e; }
+.dot.light { background-color: #8b1e3f; }
+
+.subtitle {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.message-box {
+  background-color: #f6dbe4;
+  padding: 15px 20px;
+  border-radius: 8px;
+  min-height: 60px;
+  font-size: 16px;
+  color: #380116;
+  transition: 0.3s ease;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .prolog .title { font-size: 40px; }
+  .flower { width: 55px; }
+  .prolog .book img { width: 250px; }
+  .photo { width: 110px; height: 130px; }
+  .text { font-size: 42px; }
+  .quote { font-size: 20px; padding: 0 40px; }
+  .hint { font-size: 18px; }
+}
+  </style>
+</head>
+<body>
+
+  <section class="top">
+    <div class="photos">
+      <div class="photo"><img src="assets/1.png" alt="foto 1"></div>
+      <div class="photo"><img src="assets/2.png" alt="foto 2"></div>
+    </div>
+
+    <div class="text">Happy Birthday!</div>
+    <p class="quote">Here’s to another year of laughter, memories, and little moments that mean everything.</p>
+    <p class="hint">scroll down for more</p>
+  </section>
+
+  <section class="prolog">
+    <h2 class="title">Prolog</h2>
+    <div class="book">
+      <img src="assets/book1.png" alt="prolog image">
+    </div>
+
+    <div class="flowers">
+      <img src="assets/flower/1.png" class="flower f1" alt="">
+      <img src="assets/flower/2.png" class="flower f2" alt="">
+      <img src="assets/flower/3.png" class="flower f3" alt="">
+      <img src="assets/flower/4.png" class="flower f4" alt="">
+      <img src="assets/flower/5.png" class="flower f5" alt="">
+      <img src="assets/flower/6.png" class="flower f6" alt="">
+      <img src="assets/flower/7.png" class="flower f7" alt="">
+      <img src="assets/flower/8.png" class="flower f8" alt="">
+      <img src="assets/flower/9.png" class="flower f9" alt="">
+      <img src="assets/flower/10.png" class="flower f10" alt="">
+      <img src="assets/flower/1.png" class="flower f11" alt="">
+      <img src="assets/flower/8.png" class="flower f12" alt="">
+      <img src="assets/flower/2.png" class="flower f13" alt="">
+    </div>
+  </section>
+
+<section class="wish">
+  <h2 class="title">Jar of Happiness</h2>
+  <div class="wish-content">
+    <!-- Jar -->
+    <div class="jar-container">
+      <img src="assets/jar.png" alt="jar image" class="jar-img">
+      <div class="loves">
+        <img src="assets/love.png" class="love" data-msg="You are amazing!">
+        <img src="assets/love.png" class="love" data-msg="Keep smiling today!">
+        <img src="assets/love.png" class="love" data-msg="You are loved!">
+        <img src="assets/love.png" class="love" data-msg="You are amazing!">
+        <img src="assets/love.png" class="love" data-msg="Keep smiling today!">
+        <img src="assets/love.png" class="love" data-msg="You are loved!">
+        <img src="assets/love.png" class="love" data-msg="You are amazing!">
+        <img src="assets/love.png" class="love" data-msg="Keep smiling today!">
+        <img src="assets/love.png" class="love" data-msg="You are loved!">
+        <img src="assets/love.png" class="love" data-msg="You are amazing!">
+      </div>
+    </div>
+
+    <!-- Info + message -->
+    <div class="info">
+      <!-- <div class="legend">
+        <p><span class="dot dark"></span> Maroon Gelap — Semoga</p>
+        <p><span class="dot light"></span> Maroon Cerah — Selamat</p>
+      </div>
+      <h3 class="subtitle">Open this when...</h3>
+      <div class="message-box" id="messageBox">
+        Click one inside the jar!
+      </div>
+    </div> -->
+  </div>
+</section>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const prolog = document.querySelector(".prolog");
+    const flowers = document.querySelectorAll(".flower");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          prolog.classList.add("show-flowers");
+
+          // tunggu semua bunga muncul (delay terakhir 4.2s + 2.5s transisi)
+          const totalWait = (4.2 + 2.5) * 1000;
+
+          setTimeout(() => {
+            flowers.forEach(f => f.classList.add("floating"));
+          }, totalWait);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(prolog);
+  });
+
+const loves = document.querySelectorAll(".love");
+const messageBox = document.getElementById("messageBox");
+
+loves.forEach(love => {
+  love.addEventListener("click", () => {
+    const msg = love.dataset.msg;
+    messageBox.textContent = msg;
+
+    // animasi pop halus
+    love.classList.add("clicked");
+    setTimeout(() => {
+      love.classList.remove("clicked");
+    }, 400);
+  });
+});
+
+
+  </script>
+</body>
+</html>
