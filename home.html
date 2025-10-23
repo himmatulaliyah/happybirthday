@@ -1,115 +1,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="home.css">
-  
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cabin&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
-  <section class="top">
-    <div class="photos">
-      <div class="photo"><img src="assets/1.png" alt="foto 1"></div>
-      <div class="photo"><img src="assets/2.png" alt="foto 2"></div>
-    </div>
+    <section class="top">
+        <div class="photos">
+            <div class="photo"><img src="assets/1.png" alt="foto 1"></div>
+            <div class="photo"><img src="assets/2.png" alt="foto 2"></div>
+        </div>
+        <div class="text">Happy Birthday!</div>
+        <p class="quote">here is another gift, i hope you like it ˚ ༘♡ ⋆｡˚</p>
+        <p class="hint">scroll down for more</p>
+    </section>
 
-    <div class="text">Happy Birthday!</div>
-    <p class="quote">Here’s to another year of laughter, memories, and little moments that mean everything.</p>
-    <p class="hint">scroll down for more</p>
-  </section>
+    <section class="prolog">
+        <h2 class="title">Prolog</h2>
+        <div class="book">
+            <img src="assets/book1.png" alt="prolog image">
+        </div>
+        <div class="flowers">
+            <img src="assets/flower/1.png" class="flower f1" alt="">
+            <img src="assets/flower/2.png" class="flower f2" alt="">
+            <img src="assets/flower/3.png" class="flower f3" alt="">
+            <img src="assets/flower/4.png" class="flower f4" alt="">
+            <img src="assets/flower/5.png" class="flower f5" alt="">
+            <img src="assets/flower/6.png" class="flower f6" alt="">
+            <img src="assets/flower/7.png" class="flower f7" alt="">
+            <img src="assets/flower/8.png" class="flower f8" alt="">
+            <img src="assets/flower/9.png" class="flower f9" alt="">
+            <img src="assets/flower/10.png" class="flower f10" alt="">
+            <img src="assets/flower/1.png" class="flower f11" alt="">
+            <img src="assets/flower/8.png" class="flower f12" alt="">
+            <img src="assets/flower/2.png" class="flower f13" alt="">
+        </div>
+    </section>
 
-  <section class="prolog">
-    <h2 class="title">Prolog</h2>
-    <div class="book">
-      <img src="assets/book1.png" alt="prolog image">
-    </div>
-
-    <div class="flowers">
-      <img src="assets/flower/1.png" class="flower f1" alt="">
-      <img src="assets/flower/2.png" class="flower f2" alt="">
-      <img src="assets/flower/3.png" class="flower f3" alt="">
-      <img src="assets/flower/4.png" class="flower f4" alt="">
-      <img src="assets/flower/5.png" class="flower f5" alt="">
-      <img src="assets/flower/6.png" class="flower f6" alt="">
-      <img src="assets/flower/7.png" class="flower f7" alt="">
-      <img src="assets/flower/8.png" class="flower f8" alt="">
-      <img src="assets/flower/9.png" class="flower f9" alt="">
-      <img src="assets/flower/10.png" class="flower f10" alt="">
-      <img src="assets/flower/1.png" class="flower f11" alt="">
-      <img src="assets/flower/8.png" class="flower f12" alt="">
-      <img src="assets/flower/2.png" class="flower f13" alt="">
-    </div>
-  </section>
-
-
-    <!-- Jar -->
-   <section class="wish">
-    <h2 class="title">Jar of Happiness</h2>
-    <div class="wish-content">
-        <div class="jar-container">
-            <img src="assets/jar.png" alt="jar image" class="jar-img">
-            <div class="loves">
-                <img src="assets/love.png" class="love" data-msg="Ini adalah contoh pesan yang sangat panjang untuk menunjukkan bagaimana kotak surat akan menampilkan scrollbar saat kontennya melebihi batas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam fugiat adipisci sapiente nobis. Excepturi quae eius velit corporis minus exercitationem quaerat quasi consectetur quibusdam. Minus dolorum accusantium, reiciendis, rem magnam obcaecati sapiente cumque similique, nihil recusandae possimus et aut provident minima. Quae repellat amet, tempora dolor iusto quis consequatur!">
-                
-                <img src="assets/love.png" class="love" data-msg="Keep that beautiful smile on your face today.">
-                <img src="assets/love.png" class="love" data-msg="Never forget how deeply you are loved.">
-                <img src="assets/love.png" class="love" data-msg="I'm so proud of the person you are becoming.">
-                <img src="assets/love.png" class="love" data-msg="Wishing you all the happiness you deserve!">
+    <section class="wish">
+        <h2 class="title">Jar of Happiness</h2>
+        <div class="wish-content">
+            <div class="jar-container">
+                <img src="assets/jar.png" alt="jar image" class="jar-img">
+                <div class="loves">
+                    <img src="assets/love.png" class="love" data-msg=" Semoga kamu selalu dikelilingi hal-hal yang bikin kamu tenang.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga semua usaha kamu tahun ini pelan-pelan berbuah hasil.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga kamu tetap jadi diri sendiri, tanpa harus pura-pura kuat.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga kamu ketemu banyak alasan buat senyum setiap hari.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga kamu ga lupa istirahat, bahkan di hari sibuk.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga kamu selalu punya seseorang buat cerita, termasuk aku.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga langkahmu selalu dimudahkan, sekecil apa pun itu.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga kamu tahu betapa berharganya kamu, bahkan saat kamu ragu.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga kamu tetap punya semangat buat ngejar hal-hal yang kamu mau.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga kamu dikelilingi orang-orang yang tulus dan support kamu.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga kamu selalu punya waktu buat hal-hal kecil yang kamu suka.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga hati kamu tetap lembut, meski dunia kadang keras.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga kamu bisa bangga sama diri sendiri, bukan cuma hasilnya.">
+                    <img src="assets/love.png" class="love" data-msg="Semoga setiap hari kamu ngerasa cukup. dengan dirimu, hidupmu, dan kita.">
+                    <img src="assets/love.png" class="love" data-msg="semoga aku bisa terus jadi bagian kecil dari setiap bahagiamu.">
+                </div>
+            </div>
+            <div class="message-note" id="messageNote">
+                <div class="legend">
+                    <p><span class="dot dark"></span> Maroon Gelap — Semoga</p>
+                    <p><span class="dot light"></span> Maroon Cerah — Selamat</p>
+                </div>
+                <h3 class="subtitle" id="messageSubtitle">Open this when...</h3>
+                <div class="message-text" id="messageText">
+                    <p>Click a heart in the jar!</p>
+                </div>
             </div>
         </div>
+    </section>
 
-       <div class="message-note" id="messageNote">
-            <div class="legend">
-                <p><span class="dot dark"></span> Maroon Gelap — Semoga</p>
-                <p><span class="dot light"></span> Maroon Cerah — Selamat</p>
-            </div>
-            <h3 class="subtitle" id="messageSubtitle">Open this when...</h3>
-            <div class="message-text" id="messageText">
-                <p>Click a heart in the jar!</p>
-            </div>
-        </div>
-        
-    </div>
-</section>
-
-    <!-- Info + message
-    <div class="info">
-        <div class="legend">
-          <p><span class="dot dark"></span> Maroon Gelap — Semoga</p>
-          <p><span class="dot light"></span> Maroon Cerah — Selamat</p>
-        </div>
-        <h3 class="subtitle">Open this when...</h3>
-        <div class="message-box" id="messageBox">
-          Click one inside the jar!
-        </div>
-      </div>
-  </div> -->
-
-
-
-  
-</secKKtion>
-<!-- Photos clothesline -->
-<section class="gallery">
+    <section class="gallery">
         <div class="source-area">
             <h2 class="title">Your Memories</h2>
             <div class="photo-pile">
-                <img src="assets/1.png" alt="Foto 1" class="draggable-photo" draggable="true" id="photo1">
-                <img src="assets/2.png" alt="Foto 2" class="draggable-photo" draggable="true" id="photo2">
-                <img src="assets/1.png" alt="Foto 3" class="draggable-photo" draggable="true" id="photo3">
-                <img src="assets/2.png" alt="Foto 4" class="draggable-photo" draggable="true" id="photo4">
-                <img src="assets/1.png" alt="Foto 5" class="draggable-photo" draggable="true" id="photo5">
-                <img src="assets/2.png" alt="Foto 6" class="draggable-photo" draggable="true" id="photo6">
-                <img src="assets/1.png" alt="Foto 7" class="draggable-photo" draggable="true" id="photo7">
-                <img src="assets/2.png" alt="Foto 8" class="draggable-photo" draggable="true" id="photo8">
+                <img src="assets/1.png" alt="Foto 1" class="draggable-photo" id="photo1">
+                <img src="assets/2.png" alt="Foto 2" class="draggable-photo" id="photo2">
+                <img src="assets/1.png" alt="Foto 3" class="draggable-photo" id="photo3">
+                <img src="assets/2.png" alt="Foto 4" class="draggable-photo" id="photo4">
+                <img src="assets/1.png" alt="Foto 5" class="draggable-photo" id="photo5">
+                <img src="assets/2.png" alt="Foto 6" class="draggable-photo" id="photo6">
+                <img src="assets/1.png" alt="Foto 7" class="draggable-photo" id="photo7">
+                <img src="assets/2.png" alt="Foto 8" class="draggable-photo" id="photo8">
             </div>
             <img src="assets/kardus.png" alt="Kardus" class="box">
         </div>
-
         <div class="clothesline-wrapper">
             <div class="clothesline">
                 <div class="clothespin-spot" data-spot="1"></div>
@@ -126,47 +112,13 @@
         </div>
     </section>
 
-  <script>
-//   document.addEventListener("DOMContentLoaded", () => {
-//     const prolog = document.querySelector(".prolog");
-//     const flowers = document.querySelectorAll(".flower");
-
-//     const observer = new IntersectionObserver(entries => {
-//       entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//           prolog.classList.add("show-flowers");
-
-//           // tunggu semua bunga muncul (delay terakhir 4.2s + 2.5s transisi)
-//           const totalWait = (4.2 + 2.5) * 1000;
-
-//           setTimeout(() => {
-//             flowers.forEach(f => f.classList.add("floating"));
-//           }, totalWait);
-//         }
-//       });
-//     }, { threshold: 0.3 });
-
-//     observer.observe(prolog);
-//   });
-
-// const loves = document.querySelectorAll(".love");
-// const messageBox = document.getElementById("messageBox");
-
-// loves.forEach(love => {
-//   love.addEventListener("click", () => {
-//     const msg = love.dataset.msg;
-//     messageBox.textContent = msg;
-
-//     // animasi pop halus
-//     love.classList.add("clicked");
-//     setTimeout(() => {
-//       love.classList.remove("clicked");
-//     }, 400);
-//   });
-// });
-
-
-  </script>
-  <script src="home.js"></script>
+    <section class="reveal-section">
+        <h1>You Are</h1>
+        <h1>The Best Thing</h1>
+        <h1>That' ever been </h1>
+        <h1>Mine</h1>
+    </section>
+    
+    <script src="home.js"></script>
 </body>
 </html>

@@ -1,155 +1,166 @@
-    :root {
-      --maroon: #380116;
-      --bg: #ffffff;
-    }
+:root {
+    --maroon: #380116;
+    --bg: #ffffff;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-    body {
-      background-color: var(--bg);
-      font-family: 'Allura', cursive;
-      color: var(--maroon);
-      overflow-x: hidden;
-    }
+body {
+    background-color: var(--bg);
+    /* DIPERBAIKI: Gunakan font yang mudah dibaca sebagai dasar */
+    font-family: 'Cabin', sans-serif;
+    color: var(--maroon);
+    overflow-x: hidden;
+}
 
-    /* ===== SECTION 1 ===== */
-    section.top {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 25px;
-    }
+/* ===== SECTION 1 ===== */
+section.top {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+}
 
-    .photos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 10px;
-    }
+.photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
 
-    .photo {
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-      border-radius: 4px;
-      width: 180px;
-      height: 220px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: white;
-    }
+.photo {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    width: 180px;
+    height: 220px;
+    background: white;
+    /* BARU: Transisi untuk efek hover */
+    transition: transform 0.3s ease-in-out;
+}
 
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 2px;
-    }
+/* BARU: Efek hover yang halus */
+.photo:hover {
+    transform: scale(1.05) rotate(0) !important;
+    z-index: 10;
+}
 
-    .photo:nth-child(1) {
-      transform: rotate(-8deg);
-    }
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
 
-    .photo:nth-child(2) {
-      transform: rotate(6deg);
-      margin-top: 15px;
-    }
+.photo:nth-child(1) {
+    transform: rotate(-8deg);
+}
 
-    .text {
-      font-size: 64px;
-      text-align: center;
-      line-height: 1.2;
-      margin-top: -10px;
-    }
+.photo:nth-child(2) {
+    transform: rotate(6deg);
+    margin-top: 15px;
+}
 
-    .quote {
-      font-size: 28px;
-      opacity: 0.7;
-      margin-top: -25px;
-      padding: 0 100px;
-      text-align: center;
-      max-width: 80%;
-    }
+.text {
+    /* DIPERBAIKI: Gunakan font dekoratif hanya di sini */
+    font-family: 'Allura', cursive;
+    font-size: 70px;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: -10px;
+}
 
-    .hint {
-      font-size: 25px;
-      opacity: 0.6;
-      margin-top: 10px;
-      animation: blink 2s infinite ease-in-out;
-    }
+.quote {
+    font-family: 'Allura', cursive;
+    font-size: 40px;
+    opacity: 0.7;
+    margin-top: -15px;
+    padding: 0 20px; /* Disesuaikan untuk mobile */
+    text-align: center;
+    max-width: 90%; /* Disesuaikan agar lebih fleksibel */
+}
 
-    @keyframes blink {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 1; }
-    }
+.hint {
+    font-size: 25px;
+    opacity: 0.6;
+    margin-top: 10px;
+    animation: blink 2s infinite ease-in-out;
+}
 
-    /* ===== SECTION 2 ===== */
+@keyframes blink {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* ===== SECTION 2 ===== */
 .prolog {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  padding: 50px 20px;
+    background-color: var(--bg);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 50px 20px;
 }
 
 .prolog .title {
-  font-family: 'Allura', cursive;
-  font-size: 52px;
-  color: #3b0d18;
-  margin-bottom: 30px;
+    font-family: 'Allura', cursive;
+    font-size: 52px;
+    color: #3b0d18;
+    margin-bottom: 30px;
 }
 
 .prolog .book {
-  margin-top: -30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .prolog .book img {
-  width: 650px;
-  max-width: 85%;
-  z-index: 2;
-  position: relative;
-  border-radius: 8px;
-  animation: fadeUp 1.5s ease-out forwards;
-  transform: translateY(20px);
-  opacity: 0;
+    width: 650px;
+    max-width: 85%;
+    z-index: 2;
+    position: relative;
+    border-radius: 8px;
+    animation: fadeUp 1.5s ease-out forwards;
+    transform: translateY(20px);
+    opacity: 0;
 }
 
 @keyframes fadeUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* ===== FLOWER DECOR ===== */
 .flowers {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .flower {
-  position: absolute;
-  width: 85px;
-  opacity: 0;
-  transform: scale(0.2);
-  transition: opacity 2.5s ease, transform 2.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-  will-change: transform, opacity;
+    position: absolute;
+    width: 85px;
+    opacity: 0;
+    transform: scale(0.2);
+    transition: opacity 2.5s ease, transform 2.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform, opacity;
 }
 
 /* posisi akhir */
@@ -167,56 +178,57 @@
 .f12 { top: 50%; left: 25%; --end-scale: 0.9;  transition-delay: 3.3s; }
 .f13 { top: 82%; left: 50%; --end-scale: 1.2;  transition-delay: 3.6s; }
 
-/* muncul halus */
 .prolog.show-flowers .flower {
-  opacity: 1;
-  transform: scale(var(--end-scale));
+    opacity: 1;
+    transform: scale(var(--end-scale));
 }
 
-/* animasi naik-turun lembut */
 @keyframes float {
-  0%, 100% { transform: translateY(0) scale(var(--end-scale)); }
-  50% { transform: translateY(-12px) scale(var(--end-scale)); }
+    0%, 100% { transform: translateY(0) scale(var(--end-scale)); }
+    50% { transform: translateY(-12px) scale(var(--end-scale)); }
 }
 
 .flower.floating {
-  animation: float 5s ease-in-out infinite;
+    animation: float 5s ease-in-out infinite;
 }
 
+/* ===== SECTION WISH ===== */
 section.wish {
-    background-color: #f8f3f0; /* Latar belakang yang lembut */
+    background-color: var(--bg);
 }
 
 .wish {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  color: #380116;
-  font-family: "Allura", cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    color: #380116;
 }
 
 .wish .title {
-  font-size: 52px;
-  margin-bottom: 30px;
-  color: #380116;
+    font-family: "Allura", cursive;
+    font-size: 52px;
+    margin-bottom: 30px;
+    color: #380116;
 }
 
 .wish-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px; /* Jarak antara toples dan surat */
+    gap: 30px;
     position: relative;
     width: 100%;
+    /* BARU: Batasi lebar agar tidak terlalu jauh di layar besar */
+    max-width: 800px;
     padding: 0 20px;
 }
 
 .jar-container {
     position: relative;
     width: 300px;
-    flex-shrink: 0; /* Mencegah toples menyusut */
+    flex-shrink: 0;
 }
 
 .jar-img {
@@ -239,17 +251,29 @@ section.wish {
     transform: scale(1.3);
     z-index: 10;
 }
-.love:nth-child(1) { top: 10%; left: 10%; }
-.love:nth-child(2) { top: 5%; left: 35%; }
-.love:nth-child(3) { top: 12%; left: 65%; }
-.love:nth-child(4) { top: 35%; left: 15%; }
-.love:nth-child(5) { top: 33%; left: 45%; }
 
+/* DIPERBAIKI: Menghapus duplikasi dan merapikan posisi */
+/* Posisi hati yang sudah dirapikan agar tidak keluar dari botol */
+.love:nth-child(1)  { top: 15%; left: 20%; transform: rotate(-10deg); }
+.love:nth-child(2)  { top: 8%;  left: 55%; transform: rotate(8deg); }
+.love:nth-child(3)  { top: 20%; left: 75%; transform: rotate(15deg); }
+.love:nth-child(4)  { top: 40%; left: 15%; transform: rotate(5deg); }
+.love:nth-child(5)  { top: 55%; left: 35%; transform: rotate(-12deg); }
+.love:nth-child(6)  { top: 45%; left: 65%; transform: rotate(10deg); }
+.love:nth-child(7)  { top: 70%; left: 90%; transform: rotate(-5deg); }
+.love:nth-child(8)  { top: 78%; left: 50%; transform: rotate(20deg); }
+.love:nth-child(9)  { top: 65%; left: 15%; transform: rotate(-8deg); }
+.love:nth-child(10) { top: 80%; left: 75%; transform: rotate(12deg); }
+.love:nth-child(11) { top: 30%; left: 40%; transform: rotate(-15deg); }
+.love:nth-child(12) { top: 5%;  left: 30%; transform: rotate(18deg); }
+/* -- Aturan baru untuk hati yang hilang -- */
+.love:nth-child(13) { top: 60%; left: 80%; transform: rotate(10deg); }
+.love:nth-child(14) { top: 82%; left: 25%; transform: rotate(-10deg); }
+.love:nth-child(15) { top: 25%; left: 5%;  transform: rotate(12deg); }
 
-/* === STYLE BARU UNTUK SURAT YANG LEBIH CANTIK === */
 .message-note {
     background: #fefdfa;
-    border: 2px solid #e0c8d1; /* Border default */
+    border: 2px solid #e0c8d1;
     border-radius: 8px;
     padding: 20px;
     width: 350px;
@@ -268,11 +292,7 @@ section.wish {
     pointer-events: auto;
 }
 
-/* Tema warna surat berdasarkan tipe pesan */
-.message-note.hope-theme { border-color: #4a0d1e; /* Maroon Gelap */ }
-.message-note.greeting-theme { border-color: #8b1e3f; /* Maroon Cerah */ }
-
-.legend { font-size: 16px; font-family: sans-serif; opacity: 0.7; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.legend { font-size: 16px; opacity: 0.7; border-bottom: 1px solid #eee; padding-bottom: 10px; }
 .legend p { display: flex; align-items: center; margin-bottom: 5px; }
 .legend .dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
 .dot.dark { background-color: #4a0d1e; }
@@ -286,39 +306,29 @@ section.wish {
 }
 .message-text {
     font-size: 24px;
-    font-family: var(--font-fancy);
+    font-family: 'Allura', cursive;
     line-height: 1.5;
     color: var(--maroon);
     max-height: 200px;
     overflow-y: auto;
-    padding-right: 10px; /* Jarak untuk scrollbar */
+    padding-right: 10px;
 }
 
-/* Kustomisasi scrollbar (opsional) */
 .message-text::-webkit-scrollbar { width: 8px; }
 .message-text::-webkit-scrollbar-track { background: #fdf6f6; border-radius: 10px; }
 .message-text::-webkit-scrollbar-thumb { background-color: #d1b3c2; border-radius: 10px; }
 
-.message-box {
-  background-color: #f6dbe4;
-  padding: 15px 20px;
-  border-radius: 8px;
-  min-height: 60px;
-  font-size: 16px;
-  color: #380116;
-  transition: 0.3s ease;
-}
 
+/* ===== SECTION GALLERY ===== */
 section.gallery {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
     padding: 40px;
-    background-color: #fdfaf5;
+    background-color: var(--bg);
 }
 
-/* Kiri: Kardus & Foto */
 .source-area {
     flex: 1;
     max-width: 350px;
@@ -326,11 +336,13 @@ section.gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* Posisikan item di bawah */
+    justify-content: flex-end;
     position: relative;
 }
 .source-area .title {
     margin-bottom: 20px;
+    font-family: 'Allura', cursive;
+    font-size: 48px;
 }
 .box {
     width: 220px;
@@ -340,7 +352,7 @@ section.gallery {
     position: relative;
     width: 100%;
     height: 250px;
-    margin-bottom: -60px; /* Agar tumpukan foto 'masuk' ke kardus */
+    margin-bottom: -60px;
 }
 .draggable-photo {
     width: 140px; height: 170px;
@@ -363,64 +375,121 @@ section.gallery {
 .draggable-photo.show:nth-child(6) { --rotation: -3deg; transition-delay: 0.6s; }
 .draggable-photo.show:nth-child(7) { --rotation: 12deg; transition-delay: 0.7s; }
 .draggable-photo.show:nth-child(8) { --rotation: -8deg; transition-delay: 0.8s; }
-.draggable-photo.dragging { opacity: 1; cursor: grabbing; transform: scale(1.05); }
 
-/* Kanan: Jemuran */
 .clothesline-wrapper {
     flex: 2;
     width: 100%;
+    max-width: 900px; 
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 120px;
+    gap: 50px;
 }
+
 .clothesline {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
     align-items: center;
+    gap: 20px;
 }
+
 .clothesline::before {
-    content: ''; position: absolute;
-    top: 5px; left: -20px; right: -20px;
-    height: 3px; background-color: #a1887f;
-    border-radius: 2px; z-index: -1;
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0; 
+    right: 0;
+    height: 3px;
+    background-color: #a1887f;
+    border-radius: 2px;
+    z-index: -1;
 }
+
 .clothespin-spot {
-    width: 150px; height: 180px;
+    width: 150px;
+    height: 180px;
     border: 2px dashed transparent;
     border-radius: 8px;
     transition: all 0.3s;
     position: relative;
-    display: flex; justify-content: center; align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .clothespin-spot::after {
-    content: ''; position: absolute;
-    top: -20px; left: 50%; transform: translateX(-50%);
-    width: 15px; height: 40px;
-    background-color: #d2b48c; border: 2px solid #8b5e3c;
-    border-radius: 3px; box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 40px;
+    background-color: #d2b48c;
+    border: 2px solid #8b5e3c;
+    border-radius: 3px;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
 }
-.clothespin-spot.drag-over {
-    background-color: rgba(161, 136, 127, 0.1);
-    border-color: #a1887f;
-}
+
 .draggable-photo.placed {
-    position: static; transform: rotate(0);
-    cursor: default; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-    width: 100%; height: auto;
-    border-width: 8px; border-bottom-width: 20px;
+    position: static;
+    transform: rotate(0);
+    cursor: default;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    height: auto;
+    border-width: 8px;
+    border-bottom-width: 20px;
 }
 
-/* ======================================= */
-/* === RESPONSIVE DESIGN === */
-/* ======================================= */
+/* ===== REVEAL SECTION ===== */
+.reveal-section {
+    min-height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 1.2;
+    /* DIPERBAIKI: Ini adalah kunci untuk memperbaiki horizontal scroll */
+    overflow-x: hidden;
+}
 
-/* Untuk Tablet dan Ponsel (di bawah 992px) */
+.reveal-section h1 {
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.8s ease;
+    font-family: 'Allura', cursive;
+    font-size: 4rem; /* BARU: Memperbesar tulisan agar lebih dramatis */
+}
+
+.reveal-section h1:nth-child(odd) {
+    transform: translateX(-100%);
+}
+
+.reveal-section h1:nth-child(even) {
+    transform: translateX(100%);
+}
+
+.reveal-section h1.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-section h1:nth-child(2) { transition-delay: 0.2s; }
+.reveal-section h1:nth-child(3) { transition-delay: 0.4s; }
+.reveal-section h1:nth-child(4) { transition-delay: 0.6s; }
+
+
+/* ======================================= */
+/* ===         RESPONSIVE DESIGN       === */
+/* ======================================= */
 @media (max-width: 992px) {
     section.gallery {
-        flex-direction: column; /* Ubah layout menjadi vertikal */
+        flex-direction: column;
         justify-content: flex-start;
         padding-top: 80px;
     }
@@ -433,38 +502,38 @@ section.gallery {
     }
 }
 
-/* Untuk Ponsel (di bawah 768px) */
 @media (max-width: 768px) {
     .title { font-size: 40px; }
-    .photo-display { width: 110px; height: 130px; }
-    .text { font-size: 42px; }
-    .quote { font-size: 20px; padding: 0 40px; }
+    .text { font-size: 52px; } /* Disesuaikan */
+    .quote { font-size: 28px; padding: 0 40px; } /* Disesuaikan */
     .prolog .book img { width: 90%; }
     .flower { width: 55px; }
-   .wish-content {
-        flex-direction: column; /* Tata letak jadi vertikal */
+
+    .wish-content {
+        flex-direction: column;
         gap: 40px;
     }
     
     .jar-container {
-        width: 250px; /* Perkecil toples sedikit */
+        width: 250px;
     }
 
     .message-note {
         width: 90%;
-        max-width: 400px; /* Batas lebar maksimum di mobile */
+        max-width: 400px;
         font-size: 20px;
         text-align: center;
-        max-height: 250px; /* Kurangi tinggi maksimum di mobile */
-
-        /* Ubah animasi muncul dari bawah */
+        max-height: 250px;
         transform: translateY(20px) scale(0.95);
     }
-
     .message-note.show {
         transform: translateY(0) scale(1);
     }
     
+    .reveal-section h1 {
+        font-size: 2.5rem; /* Disesuaikan */
+    }
+
     .clothesline-wrapper { gap: 80px; }
     .clothesline { flex-wrap: wrap; gap: 20px; }
     .clothespin-spot { width: 120px; height: 145px; }

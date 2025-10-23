@@ -99,10 +99,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (draggedPhoto) {
                 spot.appendChild(draggedPhoto); 
-                draggedPhoto.classList.remove('show');
+                draggedPhoto.classList.add('show');
                 draggedPhoto.classList.add('placed');
                 draggedPhoto.setAttribute('draggable', 'false');
             }
         });
+
+
+    });
+
+
+    const animatedHeadings = document.querySelectorAll('.reveal-section h1');
+
+    // Opsi untuk Intersection Observer
+    const observerOptions = {
+        root: null, // Menggunakan viewport sebagai area pengamatan
+        rootMargin: '0px',
+        threshold: 0.01 // Animasi terpicu saat 20% elemen terlihat
+    };
+
+    // Buat observer baru
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Jika elemen masuk ke dalam viewport
+            if (entry.isIntersecting) {
+                // Tambahkan class 'visible' ke elemen tersebut
+                entry.target.classList.add('visible');
+                
+                // Hentikan pengamatan pada elemen ini agar animasi tidak berulang
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Minta observer untuk mulai mengamati setiap elemen h1
+    animatedHeadings.forEach(heading => {
+        observer.observe(heading);
     });
 });

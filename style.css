@@ -1,0 +1,181 @@
+/* --- Variabel Warna untuk Tema --- */
+:root {
+    --bg-color: #f4f0ef;
+    --container-color: #ffffff;
+    --primary-text: #4a4a4a;
+    --accent-color: #d8a0a8;
+    --key-text: #5e5e5e;
+    --key-special-bg: #e9e5e4;
+}
+
+/* --- General --- */
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Container & Layout --- */
+.container {
+    background-color: #70012B;
+    border-radius: 25px;
+    padding: 40px 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* --- Gaya Foto "Polaroid" --- */
+.photo {
+    width: 200px;
+    height: auto; /* Biarkan tinggi menyesuaikan */
+    background-color: white;
+    padding: 15px;
+    padding-bottom: 60px; /* Bingkai bawah lebih tebal */
+    border-radius: 4px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+.photo:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Passcode Box --- */
+.passcode-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.passcode-box h3 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--primary-text);
+}
+
+#passInput {
+    width: 180px;
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 15px;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+    background-color: #f9f9f9;
+    color: var(--primary-text);
+    user-select: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+#passInput:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(216, 160, 168, 0.3);
+}
+
+/* --- Keypad --- */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 12px;
+    justify-content: center;
+}
+
+.keypad button {
+    width: 60px;
+    height: 60px;
+    background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
+    border-radius: 50%; /* Tombol bulat */
+    font-size: 22px;
+    color: var(--key-text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.keypad button:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+.keypad button:active {
+    transform: scale(0.95);
+}
+
+.keypad .clear,
+.keypad .enter {
+    background-color: var(--key-special-bg);
+}
+
+/* --- Animasi Shake untuk Kode Salah --- */
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+/* ======================================= */
+/* ===          RESPONSIVE             === */
+/* ======================================= */
+@media (max-width: 650px) {
+    body {
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+    
+    .container {
+        flex-direction: column;
+        padding: 30px;
+        gap: 30px;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .photo {
+        width: 150px; /* Perkecil foto */
+        padding: 10px;
+        padding-bottom: 45px;
+        transform: rotate(-2deg); /* Kurangi kemiringan */
+    }
+
+    #passInput {
+        width: 160px;
+        font-size: 20px;
+        letter-spacing: 12px;
+    }
+    
+    .keypad {
+        grid-template-columns: repeat(3, 55px);
+        gap: 10px;
+    }
+    
+    .keypad button {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
+}
