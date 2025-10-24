@@ -1149,3 +1149,17 @@ section.gallery {
     }
 }
 
+@media (max-width: 412px) {
+        .clothesline-wrapper{
+        width: 350px;
+        height: 300px;
+        column-gap: 40px;
+        display: flex;
+        margin-right: 10px;
+        margin-left: 10px;
+        justify-content: center;
+        align-items: center;
+        padding-right: 30px;
+    }
+}
+
