@@ -994,3 +994,158 @@ section.gallery {
   }
   .love { width: 36px; }
 }
+
+
+/* ===== MOBILE (iPhone 13) ===== */
+@media (max-width: 390px) {
+    
+    .photo img{
+        width: 100%;
+    }
+
+    .photo{
+        width: 150px;
+        height: 200px;
+        padding: 10px;
+    }
+
+
+    .photos{
+        margin-right: 30px;
+    }
+    .text{
+        margin-top: 15px;
+        font-size: 3rem;
+        margin-right: 40px;
+    }
+
+    .quote{
+        margin-top: 10px;
+        font-size: 1.2rem;
+        margin-right: 35px;
+    }
+
+    .flowers{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .jar-container{
+        width: 300px;
+        margin-left: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    
+  .loves {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin-right: 50px;
+    align-items: center;
+
+    gap: 3px;
+    width: 55%;
+    margin: 0 auto;
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+  }
+
+  .love {
+    position: static;
+    width: 26px;
+    transform: none;
+  }
+
+  .title{
+    font-size: 4rem;
+  }
+
+  .photo-pile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    width: 400px;
+  }
+
+  .box{
+    width: 300px;
+    margin-left: 30px;
+    margin-top: -90px;
+}
+    .draggable-photo {
+  width: 40%;
+  height: auto;
+  background-color: #000;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+  cursor: grab;
+  position: absolute;
+  bottom: -200px;
+  left: 60%;
+  transform: translate(-50%, 60px) rotate(0deg) scale(0.8);
+  opacity: 0;
+  transition:
+    transform 0.9s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.9s ease;
+}
+
+    .clothesline-wrapper{
+        width: 400px;
+        height: 300px;
+        column-gap: 40px;
+        display: flex;
+        margin-right: 40px;
+
+        justify-content: center;
+        align-items: center;
+        padding-right: 30px;
+    }
+
+    .draggable-photo.dragging {
+    cursor: grabbing;
+    /* position: absolute; sudah diatur via JS */
+    /* Pastikan transform dari tumpukan awal tidak mengganggu */
+    transform: none !important;
+}
+
+    .clothespin-spot.drag-over {
+  border: 2px dashed #8b1e3f; /* Warna border yang lebih gelap */
+  animation: dashBorder 1.5s infinite;
+}
+
+/* Animasi untuk membuat border berkedip */
+@keyframes dashBorder {
+  0%, 100% {
+    border-color: #d1b3c2;
+  }
+  50% {
+    border-color: #8b1e3f;
+  }
+}
+
+
+    .clothesline{
+        width: 400px;
+    }
+
+    .reveal-section h1{
+        font-size: 3rem;
+    }
+
+    .reveal-section{
+        margin-right: 25px;
+    }
+
+    .footer{
+        text-align: center;
+        font-size: 10px;
+        margin-bottom: 10px;
+        margin-right: 43px;
+    }
+}
+
