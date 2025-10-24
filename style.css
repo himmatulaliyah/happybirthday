@@ -11,7 +11,7 @@
 /* --- General --- */
 body {
     margin: 0;
-    background-color: var(--bg-color);
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,10 +36,10 @@ body {
 /* --- Gaya Foto "Polaroid" --- */
 .photo {
     width: 200px;
-    height: auto; /* Biarkan tinggi menyesuaikan */
     background-color: white;
-    padding: 15px;
-    padding-bottom: 60px; /* Bingkai bawah lebih tebal */
+    height: auto; /* Biarkan tinggi menyesuaikan */
+    padding: 10px;
+    padding-bottom: 10px; /* Bingkai bawah lebih tebal */
     border-radius: 4px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
@@ -85,13 +85,13 @@ body {
     user-select: none;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
+
 #passInput:focus {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 0 3px rgba(216, 160, 168, 0.3);
 }
 
-/* --- Keypad --- */
 .keypad {
     display: grid;
     grid-template-columns: repeat(3, 60px);
@@ -127,7 +127,6 @@ body {
     background-color: var(--key-special-bg);
 }
 
-/* --- Animasi Shake untuk Kode Salah --- */
 .shake {
     animation: shake 0.4s ease-in-out;
 }

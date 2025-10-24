@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const enterBtn = document.querySelector('.enter');
     
     // Kode sandi yang benar (bisa diubah)
-    const correctCode = "2025"; 
+    const correctCode = "261005"; 
 
     // Tambahkan angka ke input saat tombol angka ditekan
     nums.forEach(btn => {
         btn.addEventListener('click', () => {
-            if (passInput.value.length < 4) {
+            if (passInput.value.length < 6) {
                 passInput.value += btn.textContent;
             }
         });
