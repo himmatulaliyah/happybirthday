@@ -69,6 +69,135 @@ document.addEventListener("DOMContentLoaded", () => {
     const draggablePhotos = document.querySelectorAll('.draggable-photo');
     const spots = document.querySelectorAll('.clothespin-spot');
     const gallerySection = document.querySelector('section.gallery');
+    
+      draggablePhotos.forEach(photo => {
+        let offsetX, offsetY;
+
+        photo.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const rect = photo.getBoundingClientRect();
+
+            offsetX = touch.clientX - rect.left;
+            offsetY = touch.clientY - rect.top;
+
+            photo.classList.add('dragging');
+            photo.style.position = 'absolute';
+            photo.style.zIndex = 1000;
+        }, { passive: false });
+
+        photo.addEventListener('touchmove', (e) => {
+            if (!photo.classList.contains('dragging')) return;
+            e.preventDefault();
+            const touch = e.touches[0];
+
+            photo.style.left = `${touch.clientX - offsetX}px`;
+            photo.style.top = `${touch.clientY - offsetY}px`;
+
+            spots.forEach(spot => {
+                const rect = spot.getBoundingClientRect();
+                if (
+                    touch.clientX > rect.left && touch.clientX < rect.right &&
+                    touch.clientY > rect.top && touch.clientY < rect.bottom &&
+                    spot.children.length === 0
+                ) {
+                    spot.classList.add('drag-over');
+                } else {
+                    spot.classList.remove('drag-over');
+                }
+            });
+        }, { passive: false });
+
+        photo.addEventListener('touchend', (e) => {
+            if (!photo.classList.contains('dragging')) return;
+            e.preventDefault();
+            
+            spots.forEach(spot => spot.classList.remove('drag-over'));
+            
+            const touch = e.changedTouches[0];
+            let droppedOnSpot = false;
+
+            spots.forEach(spot => {
+                const rect = spot.getBoundingClientRect();
+                if (
+                    touch.clientX > rect.left && touch.clientX < rect.right &&
+                    touch.clientY > rect.top && touch.clientY < rect.bottom
+                ) {
+                    if (spot.children.length === 0) {
+                        spot.appendChild(photo);
+                        photo.style.position = '';
+                        photo.style.left = '';
+                        photo.style.top = '';
+                        photo.style.transform = '';
+                        photo.style.zIndex = '';
+                        photo.classList.remove('dragging');
+                        photo.classList.add('placed');
+                        photo.setAttribute('draggable', 'false');
+                        droppedOnSpot = true;
+                    }
+                }
+            });
+
+            if (!droppedOnSpot) {
+                photo.classList.remove('dragging');
+                photo.style.position = '';
+                photo.style.left = '';
+                photo.style.top = '';
+                photo.style.transform = '';
+                photo.style.zIndex = '';
+            }
+        }, { passive: false });
+    
+
+    // ================================
+    // Handle Touch End for Mobile (DIUBAH)
+    // ================================
+    photo.addEventListener('touchend', (e) => {
+        if (!photo.classList.contains('dragging')) return;
+        
+        e.preventDefault();
+        const touch = e.changedTouches[0];
+        let droppedOnSpot = false;
+
+        // Cek apakah dilepaskan di atas salah satu spot
+        spots.forEach(spot => {
+            const rect = spot.getBoundingClientRect();
+            if (
+                touch.clientX > rect.left && touch.clientX < rect.right &&
+                touch.clientY > rect.top && touch.clientY < rect.bottom
+            ) {
+                // Jika spot kosong, letakkan foto di dalamnya
+                if (spot.children.length === 0) {
+                    spot.appendChild(photo);
+                    
+                    // Reset semua style inline agar CSS class .placed yang mengambil alih
+                    photo.style.position = '';
+                    photo.style.left = '';
+                    photo.style.top = '';
+                    photo.style.transform = '';
+                    photo.style.zIndex = '';
+                    
+                    photo.classList.remove('dragging');
+                    photo.classList.add('placed');
+                    photo.setAttribute('draggable', 'false'); // Matikan drag setelah ditempatkan
+                    droppedOnSpot = true;
+                }
+            }
+        });
+
+        // Jika tidak dilepaskan di spot yang valid, kembalikan foto
+        if (!droppedOnSpot) {
+            photo.classList.remove('dragging');
+            // Reset style agar kembali ke tumpukan
+            photo.style.position = '';
+            photo.style.left = '';
+            photo.style.top = '';
+            photo.style.transform = ''; // Biarkan CSS yang mengatur posisi awal
+            photo.style.zIndex = '';
+        }
+    }, { passive: false });
+});
+    
 
     function animateGallery() {
         draggablePhotos.forEach((photo, i) => {
@@ -147,7 +276,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 draggedPhoto.setAttribute('draggable', 'false');
             }
         });
+        
     });
+
+    
 
     // ===== REVEAL SECTIONS =====
     const animatedHeadings = document.querySelectorAll('.reveal-section h1');

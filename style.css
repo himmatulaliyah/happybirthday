@@ -158,7 +158,6 @@ body {
         width: 150px; /* Perkecil foto */
         padding: 10px;
         padding-bottom: 45px;
-        transform: rotate(-2deg); /* Kurangi kemiringan */
     }
 
     #passInput {
@@ -176,5 +175,10 @@ body {
         width: 55px;
         height: 55px;
         font-size: 20px;
+    }
+
+    .text-footer{
+        text-align: center;
+        margin-left: 10px;
     }
 }
