@@ -1,121 +1,155 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cabin&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <!-- Font & Library -->
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cabin&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 
-    <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
-    <section class="top">
-        <div class="photos">
-            <div class="photo"><img src="assets/1.png" alt="foto 1"></div>
-            <div class="photo"><img src="assets/3.png" alt="foto 2"></div>
-        </div>
-        <div class="text">Happy Birthday!</div>
-        <p class="quote">here is another gift, i hope you like it ˚ ༘♡ ⋆｡˚</p>
-        <p class="hint">scroll down for more</p>
-    </section>
+  <!-- ===== TOP SECTION ===== -->
+  <section class="top">
+    <div class="photos">
+      <div class="photo"><img src="assets/1.png" alt="foto 1"></div>
+      <div class="photo"><img src="assets/2.png" alt="foto 2"></div>
+    </div>
+    <div class="text">Happy Birthday!</div>
+    <p class="quote">something simple, but it comes from me</p>
+    <p class="hint">scroll down for more</p>
+  </section>
 
-    <section class="prolog">
-        <h2 class="title">Prolog</h2>
-        <div class="book">
-            <img src="assets/book1.png" alt="prolog image">
-        </div>
-        <div class="flowers">
-            <img src="assets/flower/1.png" class="flower f1" alt="">
-            <img src="assets/flower/2.png" class="flower f2" alt="">
-            <img src="assets/flower/3.png" class="flower f3" alt="">
-            <img src="assets/flower/4.png" class="flower f4" alt="">
-            <img src="assets/flower/5.png" class="flower f5" alt="">
-            <img src="assets/flower/6.png" class="flower f6" alt="">
-            <img src="assets/flower/7.png" class="flower f7" alt="">
-            <img src="assets/flower/8.png" class="flower f8" alt="">
-            <img src="assets/flower/9.png" class="flower f9" alt="">
-            <img src="assets/flower/10.png" class="flower f10" alt="">
-            <img src="assets/flower/1.png" class="flower f11" alt="">
-            <img src="assets/flower/8.png" class="flower f12" alt="">
-            <img src="assets/flower/2.png" class="flower f13" alt="">
-        </div>
-    </section>
+  <!-- ===== PROLOG SECTION ===== -->
+  <section class="prolog">
+  <div class="book">
+    <img id="bookImage" src="assets/3.jpg" alt="prolog image">
+  </div>
 
-    <section class="wish">
-        <h2 class="title">Jar of Happiness</h2>
-        <div class="wish-content">
-            <div class="jar-container">
-                <img src="assets/jar.png" alt="jar image" class="jar-img">
-                <div class="loves">
-                    <img src="assets/love.png" class="love" data-msg=" Semoga kamu selalu dikelilingi hal-hal yang bikin kamu tenang.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga semua usaha kamu tahun ini pelan-pelan berbuah hasil.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga kamu tetap jadi diri sendiri, tanpa harus pura-pura kuat.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga kamu ketemu banyak alasan buat senyum setiap hari.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga kamu ga lupa istirahat, bahkan di hari sibuk.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga kamu selalu punya seseorang buat cerita, termasuk aku.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga langkahmu selalu dimudahkan, sekecil apa pun itu.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga kamu tahu betapa berharganya kamu, bahkan saat kamu ragu.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga kamu tetap punya semangat buat ngejar hal-hal yang kamu mau.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga kamu dikelilingi orang-orang yang tulus dan support kamu.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga kamu selalu punya waktu buat hal-hal kecil yang kamu suka.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga hati kamu tetap lembut, meski dunia kadang keras.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga kamu bisa bangga sama diri sendiri, bukan cuma hasilnya.">
-                    <img src="assets/love.png" class="love" data-msg="Semoga setiap hari kamu ngerasa cukup. dengan dirimu, hidupmu, dan kita.">
-                    <img src="assets/love.png" class="love" data-msg="semoga aku bisa terus jadi bagian kecil dari setiap bahagiamu.">
-                </div>
-            </div>
-            <div class="message-note" id="messageNote">
-              
-                <div class="message-text" id="messageText">
-                    <p>Click a heart in the jar!</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="flowers">
+    <img src="assets/flower/1.png" class="flower f1" alt="">
+    <img src="assets/flower/2.png" class="flower f2" alt="">
+    <img src="assets/flower/3.png" class="flower f3" alt="">
+    <img src="assets/flower/4.png" class="flower f4" alt="">
+    <img src="assets/flower/5.png" class="flower f5" alt="">
+    <img src="assets/flower/6.png" class="flower f6" alt="">
+    <img src="assets/flower/7.png" class="flower f7" alt="">
+    <img src="assets/flower/8.png" class="flower f8" alt="">
+    <img src="assets/flower/9.png" class="flower f9" alt="">
+    <img src="assets/flower/10.png" class="flower f10" alt="">
+    <img src="assets/flower/1.png" class="flower f11" alt="">
+    <img src="assets/flower/8.png" class="flower f12" alt="">
+    <img src="assets/flower/2.png" class="flower f13" alt="">
+  </div>
+</section>
 
-    <section class="gallery">
-        <div class="source-area">
-            <h2 class="title">Your Memories</h2>
-            <div class="photo-pile">
-                <img src="assets/5.png" alt="Foto 1" class="draggable-photo" id="photo1">
-                <img src="assets/6.png" alt="Foto 2" class="draggable-photo" id="photo2">
-                <img src="assets/7.png" alt="Foto 3" class="draggable-photo" id="photo3">
-                <img src="assets/8.png" alt="Foto 4" class="draggable-photo" id="photo4">
-                <img src="assets/9.png" alt="Foto 5" class="draggable-photo" id="photo5">
-                <img src="assets/10.png" alt="Foto 6" class="draggable-photo" id="photo6">
-                <img src="assets/11.png" alt="Foto 7" class="draggable-photo" id="photo7">
-                <img src="assets/12.png" alt="Foto 8" class="draggable-photo" id="photo8">
-            </div>
-        </div>
-        <div class="clothesline-wrapper">
-            <div class="clothesline">
-                <div class="clothespin-spot" data-spot="1"></div>
-                <div class="clothespin-spot" data-spot="2"></div>
-                <div class="clothespin-spot" data-spot="3"></div>
-                <div class="clothespin-spot" data-spot="4"></div>
-            </div>
-            <div class="clothesline">
-                <div class="clothespin-spot" data-spot="5"></div>
-                <div class="clothespin-spot" data-spot="6"></div>
-                <div class="clothespin-spot" data-spot="7"></div>
-                <div class="clothespin-spot" data-spot="8"></div>
-            </div>
-        </div>
-    </section>
+<!-- ===== SECTION PESAN PANJANG ===== -->
+<section class="letter-section">
+  <div class="letter-container">
+    <p>
+      <b style="font-size: 50px;">Happy Birthday Abang Sayang!</b>
+      <br>selamaat nempuh umur baru yang ngebuat kamu bener bener jadi abang abang hahahaha haappyyy 18 baaaby booy! terimkasi suda berperan sehebat ini ya? aku tau, jalannya ga pernah mudah & sesederhana keliatannya, tapi terimakasi banyak karna sampai bertambah nya angka usia dan berkurangnya jatah kamu hidup di dunia, kamu tetep jadi orang hebat yang pernah aku temuin :3 tolong hidup lebih lama ya abaang, tebarin senyuman lebih lama, karna kebahagiaan kamu akan selalu jadi alasan buat aku bahagia.
+    </p>
 
-    <section class="reveal-section">
-        <h1>the most valuable<h1>
-        <h1>gift is when..<h1>
-        <h1>you meet me!<h1>
-        <h1>i am the best gift <3<h1>
-    </section>
+    <p>
+      harap demi harap di langitkan kembali & semoga demi semoga di ucapkan dengan lantang sama semua penduduk bumi yang menyayangi kamu. satu permohonan aku paparkan, dan di panjatkan paling akhir dalam hati. beribu semoga akan bertarung sayaang, dan aku menitipkan “kita” tentang semoga kita bisa terus berdampingan & menciptakan bahagia dalam rangkulan kasih yang selalu mengusahakan “saling”. aku juga berharap kalo semoga segala kekhawatiran dan kecemasan akan masa depan segera mereda, semoga abang ngga terlalu memikirkan apa kata orang, ngga sibuk ngebandingin diri abang dengan diri orang lain. aku mau abang lebih mencintai diri abang sendiri, jauh lebih kuat, lebih panjang sabarnya, lebih berani, lebih bijak serta lebih dewasa.
+    </p>
 
-    <footer class="footer">Copyright © 2025 Happy Birthday - Powered by Neologic Studio</footer>
-    
-    <script src="home.js"></script>
+    <p>
+      bertumbuhlah sebagaimana mestinya yaa?, perjalanan kamu di bumi masi panjang. tapi tolong temuin aku di pijakan bumi mana pun ya? supaya kamu ga pernah ngedekap lelah sendirian, dan juga supaya kamu punya aku buat merangkul semua bentuk cinta yang kamu laluin 
+    </p>
+
+    <p>
+      terimakasih karna kamu telah memilih terlahir sebagai manusia yang mencintai aku, terimakasi karna uda jadi tokoh hebat yang ga pernah terduga yang penuh kebahagiaan, terimakasi karna uda ngisi rumpang yang ada di dalam diri aku, dan ngebuat aku bisa lebih hidup lagi, kehadiran kamu bener bener berguna sayaang 
+    </p>
+
+    <p>
+      di depan sana kamu gaakan pernah tau seperti apa, tapi aku berharap kamu selalu di beri ruang ikhlas dan rasa syukur yang lapang supaya tenang selalu menghampiri kamu. mungkin hidup terlalu banyak ngasih kamu luka yang selalu mampu kamu hadapin, semoga tahun tahun selanjutnya luka luka itu luruh satu persatu dan di ganti bahagia yang luar biasa.
+    </p>
+
+    <p>
+      di antara banyaknya sedih, bahkan sempit yang selalu dateng ke kamu, semoga kamu sellau di kasi alasan alasan kecil yang ngebuat kamu bangkit lagi, semangat kamu yang bangkit yang terus perjuangin mimpi baik kamu. tolong percaya sama aku kalo semua nya bakalan baik baik ajaa yaa? dan tahun depan kamu bakalan adaptasi dengan dunia baru kamu, tapi aku cuma berharap selalu aku yang kamu cari ketika kamu mau pulang.. segala sakit, lelah, apapun itu yang kamu bisa hadapi, semoga kamu ga pernah lupa bilang terimakasi sama diri kamu yang hebat itu, dan aku bakalan terus disini ada buat semangatin kamu dan ngedukung kamu dan selalu jadi tempat ternyaman yang kamu tempatin
+    </p>
+  </div>
+</section>
+
+  <!-- ===== JAR OF HAPPINESS ===== -->
+  <section class="wish">
+    <p class="title">Jar of Happiness</p>
+    <div class="wish-content">
+      
+      <div class="jar-container">
+        <img src="assets/jar.png" alt="jar image" class="jar-img">
+
+        <div class="loves">
+          <img src="assets/love.png" class="love" data-msg="Semoga kamu selalu dikelilingi hal-hal yang bikin kamu tenang.">
+          <img src="assets/love.png" class="love" data-msg="Semoga semua usaha kamu tahun ini pelan-pelan berbuah hasil.">
+          <img src="assets/love.png" class="love" data-msg="Semoga kamu tetap jadi diri sendiri, tanpa harus pura-pura kuat.">
+          <img src="assets/love.png" class="love" data-msg="Semoga kamu ketemu banyak alasan buat senyum setiap hari.">
+          <img src="assets/love.png" class="love" data-msg="Semoga kamu ga lupa istirahat, bahkan di hari sibuk.">
+          <img src="assets/love.png" class="love" data-msg="Semoga kamu selalu punya seseorang buat cerita, termasuk aku.">
+          <img src="assets/love.png" class="love" data-msg="Semoga langkahmu selalu dimudahkan, sekecil apa pun itu.">
+          <img src="assets/love.png" class="love" data-msg="Semoga kamu tahu betapa berharganya kamu, bahkan saat kamu ragu.">
+          <img src="assets/love.png" class="love" data-msg="Semoga kamu tetap punya semangat buat ngejar hal-hal yang kamu mau.">
+          <img src="assets/love.png" class="love" data-msg="Semoga kamu dikelilingi orang-orang yang tulus dan support kamu.">
+          <img src="assets/love.png" class="love" data-msg="Semoga kamu selalu punya waktu buat hal-hal kecil yang kamu suka.">
+          <img src="assets/love.png" class="love" data-msg="Semoga hati kamu tetap lembut, meski dunia kadang keras.">
+          <img src="assets/love.png" class="love" data-msg="Semoga kamu bisa bangga sama diri sendiri, bukan cuma hasilnya.">
+          <img src="assets/love.png" class="love" data-msg="Semoga setiap hari kamu ngerasa cukup. Dengan dirimu, hidupmu, dan kita.">
+          <img src="assets/love.png" class="love" data-msg="Semoga aku bisa terus jadi bagian kecil dari setiap bahagiamu.">
+        </div>
+      </div>
+
+      <div class="message-note" id="messageNote">
+        <div class="message-text" id="messageText">
+          <p>Click a heart in the jar!</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section class="card">
+  <div class="card-left">
+    <h1>A Letter to You, Written in November Rain</h1>
+    <p class="message">
+      November, tolong bahagiakan dia seperti pertama kali ia menyuarakan tangisannya ke bumi,
+      bantu ia meraih segala mimpi baru atau mimpi hari lalu yang belum sempat tercapai..
+      terbangkan segala kegelisahan dan ragunya pada dunia, buat ia percaya bahwa semesta akan selalu mendukungnya.
+      <br><br>
+      November, kamu tahu segala peduli dan usaha yang diciptakan untuknya akan selalu berakhir sia-sia..
+      karena ada beberapa hal di luar keinginan dia yang tidak pernah dia cari, tapi ada dalam diriku.
+      Untuk itu di bulan yang penuh cinta ini, tolong katakan padanya bahwa seluruh perasaanku akan selalu menjadi miliknya :3
+    </p>
+  </div>
+
+  <div class="card-right">
+    <div class="scratch-container">
+      <img src="assets/7.jpg" alt="hidden" class="hidden-image" />
+      <canvas></canvas>
+    </div>
+    <p class="footer-text">Swipe or drag to reveal the surprise</p>
+  </div>
+</section>
+
+
+  <!-- ===== REVEAL SECTION ===== -->
+  <section class="reveal-section">
+    <h1>the most valuable</h1>
+    <h1>gift is when..</h1>
+    <h1>you meet me!</h1>
+    <h1>i am the best gift <3</h1>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    Copyright © 2025 Happy Birthday - Powered by Neologic Studio
+  </footer>
+
+  <script src="home.js"></script>
 </body>
 </html>
