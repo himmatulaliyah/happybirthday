@@ -1,163 +1,181 @@
+/* --- Variabel Warna untuk Tema --- */
 :root {
-  --bg-color: #f4f0ef;
-  --container-color: #ffffff;
-  --primary-text: #4a4a4a;
-  --accent-color: #d8a0a8;
-  --key-text: #5e5e5e;
-  --key-special-bg: #e9e5e4;
+    --bg-color: #f4f0ef;
+    --container-color: #ffffff;
+    --primary-text: #4a4a4a;
+    --accent-color: #d8a0a8;
+    --key-text: #5e5e5e;
+    --key-special-bg: #e9e5e4;
 }
 
+/* --- General --- */
 body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
+    margin: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+/* --- Container & Layout --- */
 .container {
-  display: flex;
-  align-items: center;
-  gap: 100px;
-  padding: 50px 100px;
-  background-color: #70012B;
-  border-radius: 10px;
-  transition: transform 0.2s ease-in-out;
-  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15); 
+    background-color: #70012B;
+    border-radius: 25px;
+    padding: 40px 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
 }
 
+/* --- Gaya Foto "Polaroid" --- */
 .photo {
-  width: 200px;
-  background-color: #fff;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
+    width: 200px;
+    background-color: white;
+    height: auto; /* Biarkan tinggi menyesuaikan */
+    padding: 10px;
+    padding-bottom: 10px; /* Bingkai bawah lebih tebal */
+    border-radius: 4px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
 }
-
 .photo:hover {
-  transform: scale(1.05);
+    transform: rotate(0deg) scale(1.05);
 }
 
 .photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
+/* --- Passcode Box --- */
 .passcode-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .passcode-box h3 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  font-weight: 100;
-  color: var(--primary-text);
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--primary-text);
 }
 
 #passInput {
-  width: 160px;
-  height: 10px;
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 10px;
-  letter-spacing: 15px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  color: var(--primary-text);
-  user-select: none;
-  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    width: 180px;
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 15px;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+    background-color: #f9f9f9;
+    color: var(--primary-text);
+    user-select: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 #passInput:focus {
-  outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(216, 160, 168, 0.3);
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(216, 160, 168, 0.3);
 }
 
 .keypad {
-  display: grid;
-  grid-template-columns: repeat(3, 60px);
-  gap: 10px;
-  justify-content: center;
-  margin-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 12px;
+    justify-content: center;
 }
 
 .keypad button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid #e5e5e5;
-  background-color: #f5f5f5;
-  color: var(--key-text);
-  font-size: 20px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: 'Poppins', sans-serif;
+    width: 60px;
+    height: 60px;
+    background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
+    border-radius: 50%; /* Tombol bulat */
+    font-size: 22px;
+    color: var(--key-text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .keypad button:hover {
-  background-color: var(--bg-color);
-  color: #70012B;
-  border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
 }
 
 .keypad button:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 .keypad .clear,
 .keypad .enter {
-  background-color: var(--key-special-bg);
+    background-color: var(--key-special-bg);
 }
 
 .shake {
-  animation: shake 0.4s ease-in-out;
-}
-
-.text-footer {
-  color: #70012B;
-  font-weight: 300;
-}
-
-.enter i {
-  font-size: 30px;
+    animation: shake 0.4s ease-in-out;
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-8px); }
-  75% { transform: translateX(8px); }
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
 }
 
+/* ======================================= */
+/* ===          RESPONSIVE             === */
+/* ======================================= */
 @media (max-width: 650px) {
-  body {
-    flex-direction: column;
-    justify-content: center;  
-    align-items: center;     
-    padding: 0 50px;           
-  }
+    body {
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+    
+    .container {
+        flex-direction: column;
+        padding: 30px;
+        gap: 30px;
+        width: 100%;
+        max-width: 320px;
+    }
 
-  .container {
-    flex-direction: column;
-    width: 100%;
-    max-width: 320px;
-    padding: 30px;
-    gap: 30px;
-    align-items: center;    
-  }
+    .photo {
+        width: 150px; /* Perkecil foto */
+        padding: 10px;
+        padding-bottom: 45px;
+    }
 
-  .photo {
-    width: 150px;
-  }
+    #passInput {
+        width: 160px;
+        font-size: 20px;
+        letter-spacing: 12px;
+    }
+    
+    .keypad {
+        grid-template-columns: repeat(3, 55px);
+        gap: 10px;
+    }
+    
+    .keypad button {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
 
     .text-footer{
         text-align: center;
@@ -170,7 +188,4 @@ body {
         margin-right:  20px;
     }
 }
-
-
-
 

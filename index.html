@@ -1,35 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Access Passcode</title>
-
-    <!-- Font & Library -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Passcode</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-    
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="display: flex; flex-direction: column; padding: 10px;">
 
   <div  class="container">
-
     <div class="photo">
-      <img src="assets/1.png" alt="Photo">
+      <img src="assets/13.png" alt="Photo">
     </div>
 
-    <!-- Passcode Section -->
     <div class="passcode-box">
-      <h3 style="color: #ffff;">Access Passcode</h3>
-      <input type="text" id="passInput" maxlength="6" readonly>
-
+      <h3 style="color: white;">Enter Passcode</h3>
+      <input type="password" id="passInput" maxlength="4" readonly>
       <div class="keypad">
         <button class="num">1</button>
         <button class="num">2</button>
@@ -42,15 +32,13 @@
         <button class="num">9</button>
         <button class="clear">C</button>
         <button class="num zero">0</button>
-        <button class="enter"><i class="bi bi-check"></i></button>
+        <button class="enter">✓</button>
       </div>
     </div>
   </div>
-
-  <p class="text-footer" style="font-size: 0.7rem; text-align: center;">
-    Copyright © 2025 Happy Birthday - Powered by Neologic Studio
-  </p>
+  <p style="font-size: 0.7rem; text-align: center;" class="text-footer">Copyright © 2025 Happy Birthday - Powered by Neologic Studio</p>
 
   <script src="script.js"></script>
+
 </body>
 </html>
